@@ -5,8 +5,11 @@ We aim to develop an AI-Driven lane-switching optimization system that leverages
 
 ## Project Description
 **Project Title:** **AI-Driven Lane Switching Optimization Using Computer Vision and Reinforcement Learning**  
+
 Efficient lane selection is critical for minimizing travel time and reducing highway congestion. Current traffic prediction models primarily focus on selecting the best lane at the start of a journey, but they lack adaptability to **real-time traffic dynamics**. This project proposes an AI-driven lane-switching optimization system that continuously predicts the **optimal lane** using **computer vision (CV) and reinforcement learning (RL)**.  
+
 The system will leverage **real-time webcam feeds** from sources like Mass511 to extract lane-level traffic data. Using **YOLO** or **Mask R-CNN**, the model will detect and track vehicles, estimating their density, speed, and movement patterns per lane. This processed data will feed into a **Deep Q-Learning (DQL) model**, which will dynamically learn **when and where** to switch lanes based on real-time conditions. Unlike traditional models that rely on static traffic rules or fixed decision points, the proposed system will employ **adaptive decision-making**, continuously refining its strategy to ensure the shortest possible travel time.  
+
 A key innovation in this project is the **combination of real-time vision-based lane assessment with reinforcement learning**. This hybrid approach will allow the model to adapt to sudden congestion shifts, aggressive driver behavior, and varying traffic flow conditions. The system will be evaluated based on metrics such as **average travel time reduction, lane-switching efficiency, and overall congestion impact**. By integrating **computer vision and RL**, this project aims to improve highway traffic flow, helping drivers make more informed and efficient lane-switching decisions.
 
 ## Goal 
