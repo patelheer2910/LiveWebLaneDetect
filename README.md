@@ -22,7 +22,7 @@ The motive of this project is to develop a system that dynamically predicts the 
       - **Vehicle Density per Lane** – Number of cars in each lane.
       - **Vehicle Speed Estimation** – Tracking motion across frames to estimate speeds.
       - **Lane Occupancy Ratio** – Percentage of lane space occupied by vehicles.
-      - **Vehicle Types & Sizes** – Detecting cars, trucks, motorcycles, and buses (which            impact lane efficiency).
+      - **Vehicle Types & Sizes** – Detecting cars, trucks, motorcycles, and buses (which impact lane efficiency).
       - **Traffic Flow Patterns** – Identifying bottlenecks, sudden slowdowns, and                   congestion buildup.
       - **Brake Light Detection** – Sudden braking behavior indicating potential slowdowns.
   - **2. Real-Time Traffic Data (From Mass511 Reports)**
@@ -36,15 +36,37 @@ The motive of this project is to develop a system that dynamically predicts the 
       - **Day of the Week Impact** – Weekend vs. weekday congestion patterns.
       - **Special Event Proximity** – Nearby events that might influence traffic (e.g.,              sports games, concerts).
 ## Data Cleaning
+- **1. Real-time Traffic Data (Webcam Feed)**
+    - **a. Handlind missing frames or dropped data**
+    - **b. Removing Blurry or Corrupted frames**
+    - **c. Handling light and weather variations**
+    - **d. Background subtraction and foreground extraction**
+    - **e. Object detection and noise reduction**
 
+- **2. Tabular Data from Mass511 Reports**
+    - **a. Handling missing data**
+    - **b. Standardizing format**
+    - **c. Handling outliers**
+    - **d. Dealing with redundant data**
+    - **e. Encoding categorical data**
+
+- **3. Time and Location-Based Features**
+    - **a. Standardizing data**
+    - **b. Incorporating special events**
+    - **c. Handling anomalies in Traffic data**
+    - **d. Real-time processing of data**
 
 ## Feature Extraction
+- 
 
 
 ## Modelling
+- **Model Architecture:** On a high level, our first step is to identify vehicles and analysis various attributes such as speed. Using this data, we will predict the best lane. For detection of vehicles, we will use **YOLO** or **Mask-R-CNN**. These algorithms will also estimate attributes such as speed, movement patterns, lane congestion, etc. All this combined data will be passed into a **Deep Q-Learning** model, to predict the best lane for the car to travel at a given time.
+- **Training Approach:** Since the our model is based on reinforcement learning, we will establish a system of **punishments** and **rewards** to help the model get better at its estimates and predictions.
 
 
 ## Visualization
 
 
 ## Test Plan / Metrics
+- 
