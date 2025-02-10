@@ -60,7 +60,12 @@ The motive of this project is to develop a system that dynamically predicts the 
     - **d. Real-time processing of data**
 
 ## Feature Extraction
-- 
+- The extracted features will be transformed into structured data suitable for reinforcement learning.
+- **Feature Representation for Reinforcement learning:**
+    - Encoding lane states as numerical values for decision-making.
+    - Defining state-action pairs for Deep Q-Learning based on extracted traffic attributes.
+    - Implementing a reward system that penalizes congestion-prone decisions and incentivizes smooth traffic flow.
+
 
 
 ## Modelling
@@ -69,7 +74,19 @@ The motive of this project is to develop a system that dynamically predicts the 
 
 
 ## Visualization
+We plan to show a few graphs such as:
+- Bar/line charts representing lane occupancy and vehicle speed over time. 
+- Heatmaps showing lane-specific congestion levels over time.
+
+Additionally, we will overlay predicted lane-switching actions on a video feed to compare model decisions with actual lane conditions.
 
 
 ## Test Plan / Metrics
-- 
+We aim to ensure that our test data includes diverse traffic patterns (e.g., rush hour, adverse weather) to validate model generalization.
+
+We will have several metrics, including:
+- **Average Travel Time Reduction**: to measure the decrease in travel time compared to baseline strategies (e.g., static lane choice).
+- **Lane-Switching Efficiency**:  to track the number of unnecessary lane switches and optimize for minimal switching while maintaining low travel time.
+- **Congestion Detection Accuracy**:  to evaluate how accurately the model detects congestion and suggests appropriate actions.
+- **Real-Time Performance**:  to measure latency in decision-making to ensure real-time adaptability.
+- **Model convergence rate**: to assess the number of training iterations required for stable learning
