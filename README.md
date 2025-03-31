@@ -66,18 +66,33 @@ The system processes video frames dynamically, providing real-time updates on tr
 - The system can be integrated with traffic control centers to trigger alerts for congestion-prone areas, allowing for better traffic management and planning.
 
 ## Preliminary Results
+<br>
+
+  <img src="images/DetectPredictions.jpg" alt="Traffic Density" width="500"/>
+
 After fine-tuning, the YOLOv8 model got better at predicting correct classes for the images (highlighting vehicles detected with bounding boxes) in a large variety of different scenarios – multiple camera views, different types of roads, varying traffic and lighting conditions.
+<br>
+
+  <img src="images/lossPlots.jpg" alt="Traffic Density" width="500"/>
 
 - The loss curves (box loss, classification loss, and distribution focal loss) show that the learning is effective and there is no overfitting.
 - Precision and recall are stable at approximately 0.9, showing that the model is identifying vehicles with high accuracy.
 - mAP50, mAP50-95 show that the model is performing strongly and is reliable across multiple confidence thresholds.
 
 ### Confusion Matrix
+<br>
+
+  <img src="images/ConfusionMatrix.png" alt="Traffic Density" width="500"/>
+
 - The normalized confusion matrix shows a strong true positive rate of **0.98** for vehicle detection and **1.00** for correctly classifying background elements.
 - There is a minimal false negative rate (0.02) where vehicles are incorrectly classified as background.
 - The negligible false positive rate confirms the model rarely misidentifies background elements as vehicles, which is crucial for accurate traffic density estimation.
 
 ### F1 Confidence Curve
+<br>
+
+  <img src="images/F1_curve.jpg" alt="Traffic Density" width="500"/>
+
 - The graph shows the F1 Confidence curve for the classes.
 - The optimal **F1 score is 0.93 at a confidence threshold of 0.502**.
 - The curve maintains high F1 scores (above 0.8) across a wide range of confidence thresholds (approx. 0.1 - 0.8), indicating robustness and consistency for real-world deployment scenarios.
