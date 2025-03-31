@@ -82,7 +82,7 @@ After fine-tuning, the YOLOv8 model got better at predicting correct classes for
 ### Confusion Matrix
 <br>
 
-  <img src="images/ConfusionMatrix.png" alt="Traffic Density" width="500"/>
+  <img src="images/ConfusionMatrix.jpg" alt="Traffic Density" width="500"/>
 
 - The normalized confusion matrix shows a strong true positive rate of **0.98** for vehicle detection and **1.00** for correctly classifying background elements.
 - There is a minimal false negative rate (0.02) where vehicles are incorrectly classified as background.
