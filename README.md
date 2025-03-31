@@ -8,6 +8,7 @@ This project aims to estimate real-time traffic density using YOLOv8, an object 
 
 ### Dataset Structure
 - **Topview Vehicle Detection Image Dataset** from Kaggle
+  <img src="images/DataInfo.png" alt="Traffic Density" width="500"/>
 
 ## Data Processing
 
