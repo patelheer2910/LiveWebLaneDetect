@@ -50,6 +50,7 @@ After applying the detection model, bounding boxes are drawn around the vehicles
 <br>
 
   <img src="images/LaneDetects.png" alt="Traffic Density" width="500"/>
+  
 ## Traffic Density Estimation
 The system calculates the number of vehicles in each lane based on detected bounding boxes.
 
