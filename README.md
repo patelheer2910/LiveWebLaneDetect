@@ -7,7 +7,8 @@ This project aims to estimate real-time traffic density using YOLOv8, a state-of
 This project aims to estimate real-time traffic density using YOLOv8, an object detection model. By processing video frames or images, the system identifies and counts vehicles in different lanes to determine traffic intensity levels. This approach is beneficial for things like traffic management, congestion analysis, and urban planning.
 
 ### Dataset Structure
-- **Topview Vehicle Detection Image Dataset** from Kaggle
+- **Topview Vehicle Detection Image Dataset** from Kaggle<br>
+
   <img src="images/DataInfo.png" alt="Traffic Density" width="500"/>
 
 ## Data Processing
