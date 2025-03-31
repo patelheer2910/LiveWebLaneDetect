@@ -25,7 +25,10 @@ This project aims to estimate real-time traffic density using YOLOv8, an object 
 - **Head**: YOLOv8 detection head for anchor-free design.
 
 ### Training Process
-- **Hyperparameters**:
+- **Hyperparameters**:<br>
+
+  <img src="images/modelParameters.png" alt="Traffic Density" width="500"/>
+
 - **Loss Functions**:
   - **Box Loss**: Measuring bounding box regression accuracy.
   - **Classification Loss**: Measures class prediction accuracy.
