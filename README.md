@@ -43,9 +43,13 @@ This project aims to estimate real-time traffic density using YOLOv8, an object 
 
 ## Vehicle Detection and Lane Identification
 We identify vehicles within each frame using YOLO. We first isolate the region of interest (ROI) in the frame, typically focusing on the lanes of interest, using a mask to eliminate irrelevant areas. This can be done by blacking out the regions outside the specific vertical range of the lanes, ensuring that only the lanes are considered for vehicle counting.
+<br>
 
+  <img src="images/Detections.png" alt="Traffic Density" width="500"/>
 After applying the detection model, bounding boxes are drawn around the vehicles, and their characteristics—such as size, position, and movement—are extracted. These boxes are then used to track vehicle movements, which helps estimate vehicle speeds and lane occupancy.
+<br>
 
+  <img src="images/LaneDetects.png" alt="Traffic Density" width="500"/>
 ## Traffic Density Estimation
 The system calculates the number of vehicles in each lane based on detected bounding boxes.
 
