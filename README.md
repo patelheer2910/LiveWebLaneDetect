@@ -1,92 +1,78 @@
-# Real-time Lane Switching Optimization
+# Midterm Report
 
-## Executive Summary
-We aim to develop an AI-Driven lane-switching optimization system that leverages real-time webcam footage and reinforcement learning. The model will track the vehicle density and movement in each lane on I-93, extracting key traffic patterns. A Deep Q-Learning (DQL) framework will then continuously predict the optimal lane to minimize travel time, adapting dynamically rather than making a one-time decision. 
-
-## Project Description
-**Project Title:** **AI-Driven Lane Switching Optimization Using Computer Vision and Reinforcement Learning**  
-
-Efficient lane selection is critical for minimizing travel time and reducing highway congestion. Current traffic prediction models primarily focus on selecting the best lane at the start of a journey, but they lack adaptability to **real-time traffic dynamics**. This project proposes an AI-driven lane-switching optimization system that continuously predicts the **optimal lane** using **computer vision (CV) and reinforcement learning (RL)**.  
-
-The system will leverage **real-time webcam feeds** from sources like Mass511 to extract lane-level traffic data. Using **YOLO** or **Mask R-CNN**, the model will detect and track vehicles, estimating their density, speed, and movement patterns per lane. This processed data will feed into a **Deep Q-Learning (DQL) model**, which will dynamically learn **when and where** to switch lanes based on real-time conditions. Unlike traditional models that rely on static traffic rules or fixed decision points, the proposed system will employ **adaptive decision-making**, continuously refining its strategy to ensure the shortest possible travel time.  
-
-A key innovation in this project is the **combination of real-time vision-based lane assessment with reinforcement learning**. This hybrid approach will allow the model to adapt to sudden congestion shifts, aggressive driver behavior, and varying traffic flow conditions. The system will be evaluated based on metrics such as **average travel time reduction, lane-switching efficiency, and overall congestion impact**. By integrating **computer vision and RL**, this project aims to improve highway traffic flow, helping drivers make more informed and efficient lane-switching decisions.
-
-## Goal 
-The motive of this project is to develop a system that dynamically predicts the best lane for minimizing the travel time on I-93. This will be done to seel improved highway efficiency, reduced congestion-related delays, and enhanced driving decisions. 
+## Overview
+This project aims to estimate real-time traffic density using YOLOv8, a state-of-the-art object detection model. By processing video frames or images, the system identifies and counts vehicles in different lanes to determine traffic intensity levels. This approach is beneficial for traffic management, congestion analysis, and urban planning by providing actionable insights into road usage patterns.
 
 ## Data Collection
-- **Source**: Utilize the [Mass511](https://mass511.com/) and other publicly available imformation covering diverse connecting routes to ensure model generalization.
-- **Features**:
-  -  **1. Computer Vision Features (From Webcam Feeds)**
+This project aims to estimate real-time traffic density using YOLOv8, an object detection model. By processing video frames or images, the system identifies and counts vehicles in different lanes to determine traffic intensity levels. This approach is beneficial for things like traffic management, congestion analysis, and urban planning.
 
-     Using YOLO or Mask R-CNN, you can process live traffic camera footage to extract:
+### Dataset Structure
+- **Topview Vehicle Detection Image Dataset** from Kaggle
 
-      - **Vehicle Density per Lane** – Number of cars in each lane.
-      - **Vehicle Speed Estimation** – Tracking motion across frames to estimate speeds.
-      - **Lane Occupancy Ratio** – Percentage of lane space occupied by vehicles.
-      - **Vehicle Types & Sizes** – Detecting cars, trucks, motorcycles, and buses (which impact lane efficiency).
-      - **Traffic Flow Patterns** – Identifying bottlenecks, sudden slowdowns, and                   congestion buildup.
-      - **Brake Light Detection** – Sudden braking behavior indicating potential slowdowns.
-  - **2. Real-Time Traffic Data (From Mass511 Reports)**
- 
-      - **Current Travel Speeds** – Average speed per highway segment.
-      - **Traffic Incidents** – Accidents, roadwork, and congestion reports affecting lane             choice.
-      - **Weather Conditions** – Rain, snow, fog, and visibility affecting lane speeds.
-      - **Construction Zone Alerts** – Lane closures or diversions impacting lane                    availability.
-  - **3. Time & Location-Based Features**
-      - **Time of Day Traffic Trends** – Rush hour vs. off-peak traffic patterns.
-      - **Day of the Week Impact** – Weekend vs. weekday congestion patterns.
-      - **Special Event Proximity** – Nearby events that might influence traffic (e.g.,              sports games, concerts).
-## Data Cleaning
-- **1. Real-time Traffic Data (Webcam Feed)**
-    - **a. Handlind missing frames or dropped data**
-    - **b. Removing Blurry or Corrupted frames**
-    - **c. Handling light and weather variations**
-    - **d. Background subtraction and foreground extraction**
-    - **e. Object detection and noise reduction**
+## Data Processing
 
-- **2. Tabular Data from Mass511 Reports**
-    - **a. Handling missing data**
-    - **b. Standardizing format**
-    - **c. Handling outliers**
-    - **d. Dealing with redundant data**
-    - **e. Encoding categorical data**
+- **Frame Filtering**: The system preprocesses video frames by filtering out those that are blurry, contain excessive noise, or are corrupted due to camera malfunctions or adverse weather conditions.
+- **Region of Interest (ROI) Selection**: To improve accuracy, the model focuses on specific lanes by masking out irrelevant areas, ensuring that only the relevant traffic regions are analyzed.
+- **Background Subtraction**: Moving vehicles are isolated from the static background to enhance detection accuracy. This step ensures that stationary objects such as road signs and traffic lights do not interfere with vehicle detection.
 
-- **3. Time and Location-Based Features**
-    - **a. Standardizing data**
-    - **b. Incorporating special events**
-    - **c. Handling anomalies in Traffic data**
-    - **d. Real-time processing of data**
+## Data Modelling
 
-## Feature Extraction
-- The extracted features will be transformed into structured data suitable for reinforcement learning.
-- **Feature Representation for Reinforcement learning:**
-    - Encoding lane states as numerical values for decision-making.
-    - Defining state-action pairs for Deep Q-Learning based on extracted traffic attributes.
-    - Implementing a reward system that penalizes congestion-prone decisions and incentivizes smooth traffic flow.
+### Model Architecture
+- **Backbone**: CSPDarkNet (Cross Stage Partial Darknet) for feature extraction.
+- **Neck**: PAN (Path Aggregation Network) for fusion of features.
+- **Head**: YOLOv8 detection head for anchor-free design.
 
+### Training Process
+- **Hyperparameters**:
+- **Loss Functions**:
+  - **Box Loss**: Measuring bounding box regression accuracy.
+  - **Classification Loss**: Measures class prediction accuracy.
+  - **Distribution Focal Loss**: Handling class imbalance.
 
+### Model Evaluation
+- **Key Metrics**:
+  - **Precision**: Ratio of TP to positive predictions.
+  - **Recall**: Ratio of TP to all actual predictions.
+  - **mAP@0.5**: Mean Average Precision at IoU threshold of 0.5.
+  - **mAP@0.5:0.95**: Mean Average Precision across IoU threshold of 0.5 to 0.95.
 
-## Modelling
-- **Model Architecture:** On a high level, our first step is to identify vehicles and analysis various attributes such as speed. Using this data, we will predict the best lane. For detection of vehicles, we will use **YOLO** or **Mask-R-CNN**. These algorithms will also estimate attributes such as speed, movement patterns, lane congestion, etc. All this combined data will be passed into a **Deep Q-Learning** model, to predict the best lane for the car to travel at a given time.
-- **Training Approach:** Since the our model is based on reinforcement learning, we will establish a system of **punishments** and **rewards** to help the model get better at its estimates and predictions.
+## Vehicle Detection and Lane Identification
+We identify vehicles within each frame using YOLO. We first isolate the region of interest (ROI) in the frame, typically focusing on the lanes of interest, using a mask to eliminate irrelevant areas. This can be done by blacking out the regions outside the specific vertical range of the lanes, ensuring that only the lanes are considered for vehicle counting.
 
+After applying the detection model, bounding boxes are drawn around the vehicles, and their characteristics—such as size, position, and movement—are extracted. These boxes are then used to track vehicle movements, which helps estimate vehicle speeds and lane occupancy.
 
-## Visualization
-We plan to show a few graphs such as:
-- Bar/line charts representing lane occupancy and vehicle speed over time. 
-- Heatmaps showing lane-specific congestion levels over time.
+## Traffic Density Estimation
+The system calculates the number of vehicles in each lane based on detected bounding boxes.
 
-Additionally, we will overlay predicted lane-switching actions on a video feed to compare model decisions with actual lane conditions.
+- **Traffic density is estimated by a predefined threshold of 10 for vehicle counts**:
+  - **High vehicle count**: The lane is classified as having "Heavy" traffic.
+  - **Low vehicle count**: The lane is classified as having "Smooth" traffic.
+- The system continuously updates traffic density estimations in real-time as new frames are processed.
+- The density estimation algorithm ensures minimal errors by filtering out false detections and considering factors like vehicle occlusion and lighting conditions.
 
+## Real-Time Feedback
+The system processes video frames dynamically, providing real-time updates on traffic density.
 
-## Test Plan / Metrics
-We aim to ensure that our test data includes diverse traffic patterns (e.g., rush hour, adverse weather) to validate model generalization.
+- A dashboard or interface can display:
+  - Real-time bounding box visualization of detected vehicles.
+  - Lane-wise vehicle counts for easy traffic assessment.
+  - Current traffic intensity classification for each lane.
+- Data visualization tools such as Matplotlib and OpenCV assist in interpreting traffic patterns and trends over time.
+- The system can be integrated with traffic control centers to trigger alerts for congestion-prone areas, allowing for better traffic management and planning.
 
-We will have several metrics, including:
-- **Average Travel Time Reduction**: to measure the decrease in travel time compared to baseline strategies (e.g., static lane choice).
-- **Lane-Switching Efficiency**:  to track the number of unnecessary lane switches and optimize for minimal switching while maintaining low travel time.
-- **Congestion Detection Accuracy**:  to evaluate how accurately the model detects congestion and suggests appropriate actions.
-- **Real-Time Performance**:  to measure latency in decision-making to ensure real-time adaptability.
-- **Model convergence rate**: to assess the number of training iterations required for stable learning
+## Preliminary Results
+After fine-tuning, the YOLOv8 model got better at predicting correct classes for the images (highlighting vehicles detected with bounding boxes) in a large variety of different scenarios – multiple camera views, different types of roads, varying traffic and lighting conditions.
+
+- The loss curves (box loss, classification loss, and distribution focal loss) show that the learning is effective and there is no overfitting.
+- Precision and recall are stable at approximately 0.9, showing that the model is identifying vehicles with high accuracy.
+- mAP50, mAP50-95 show that the model is performing strongly and is reliable across multiple confidence thresholds.
+
+### Confusion Matrix
+- The normalized confusion matrix shows a strong true positive rate of **0.98** for vehicle detection and **1.00** for correctly classifying background elements.
+- There is a minimal false negative rate (0.02) where vehicles are incorrectly classified as background.
+- The negligible false positive rate confirms the model rarely misidentifies background elements as vehicles, which is crucial for accurate traffic density estimation.
+
+### F1 Confidence Curve
+- The graph shows the F1 Confidence curve for the classes.
+- The optimal **F1 score is 0.93 at a confidence threshold of 0.502**.
+- The curve maintains high F1 scores (above 0.8) across a wide range of confidence thresholds (approx. 0.1 - 0.8), indicating robustness and consistency for real-world deployment scenarios.
