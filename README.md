@@ -1,5 +1,8 @@
 # Midterm Report
 
+## YouTube Link 
+Find our Mid Term Presentation here: [Real-time Lane Traffic Detection](https://youtu.be/Md70Tk-DUI0?si=oH_1ATKJvD3yRhl-)
+
 ## Overview
 This project aims to estimate real-time traffic density using YOLOv8, a state-of-the-art object detection model. By processing video frames or images, the system identifies and counts vehicles in different lanes to determine traffic intensity levels. This approach is beneficial for traffic management, congestion analysis, and urban planning by providing actionable insights into road usage patterns.
 
