@@ -1,4 +1,4 @@
-# Midterm Report
+# Project Description
 
 ## YouTube Link 
 Find our Mid Term Presentation here: [Real-time Lane Traffic Detection](https://youtu.be/Md70Tk-DUI0?si=oH_1ATKJvD3yRhl-)
