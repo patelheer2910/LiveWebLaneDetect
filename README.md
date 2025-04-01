@@ -21,7 +21,7 @@ This project aims to estimate real-time traffic density using YOLOv8, an object 
 - **Background Subtraction**: Moving vehicles are isolated from the static background to enhance detection accuracy. This step ensures that stationary objects such as road signs and traffic lights do not interfere with vehicle detection.
 
 ## Data Modelling
-
+We are using YOLOv8n, aka YOLOv8 Nano, which is a version of the YOLOv8 family designed for speed and resource efficiency.
 ### Model Architecture
 - **Backbone**: CSPDarkNet (Cross Stage Partial Darknet) for feature extraction.
 - **Neck**: PAN (Path Aggregation Network) for fusion of features.
