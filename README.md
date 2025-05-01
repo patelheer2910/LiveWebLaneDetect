@@ -120,7 +120,7 @@ The system processes video frames dynamically, providing real-time updates on tr
 After fine-tuning, the YOLOv8 model got better at predicting correct classes for the images (highlighting vehicles detected with bounding boxes) in a large variety of different scenarios – multiple camera views, different types of roads, varying traffic and lighting conditions.
 <br>
 
-  <img src="images/lossPlots.jpg" alt="Traffic Density" width="500"/>
+  <img src="images/lossPlots.png" alt="Traffic Density" width="500"/>
 
 - The loss curves (box loss, classification loss, and distribution focal loss) show that the learning is effective and there is no overfitting.
 - Precision and recall are stable at approximately 0.8, showing that the model is identifying vehicles with high accuracy.
@@ -129,7 +129,7 @@ After fine-tuning, the YOLOv8 model got better at predicting correct classes for
 ### F1 Confidence Curve
 <br>
 
-  <img src="images/F1_curve.jpg" alt="Traffic Density" width="500"/>
+  <img src="images/F1_curve.png" alt="Traffic Density" width="500"/>
 
 - The graph shows the F1 Confidence curve for the classes.
 - The optimal **F1 score is 0.86 at a confidence threshold of 0.353**.
