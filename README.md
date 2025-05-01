@@ -87,7 +87,7 @@ This project aims to estimate real-time traffic density using YOLOv8, an object 
 We identify vehicles within each frame using YOLO. We first isolate the region of interest (ROI) in the frame, typically focusing on the lanes of interest, using a mask to eliminate irrelevant areas. This can be done by blacking out the regions outside the specific vertical range of the lanes, ensuring that only the lanes are considered for vehicle counting.
 <br>
 
-  <img src="images/detections.png" alt="Traffic Density" width="500"/>
+  <img src="images/detections.jpg" alt="Traffic Density" width="500"/>
 After applying the detection model, bounding boxes are drawn around the vehicles, and their characteristics—such as size, position, and movement—are extracted. These boxes are then used to track vehicle movements, which helps estimate vehicle speeds and lane occupancy.
 <br>
 
@@ -115,7 +115,7 @@ The system processes video frames dynamically, providing real-time updates on tr
 ## Results
 <br>
 
-  <img src="images/DetectPredictions.jpg" alt="Traffic Density" width="500"/>
+  <img src="images/val_batch1_pred.jpg" alt="Traffic Density" width="500"/>
 
 After fine-tuning, the YOLOv8 model got better at predicting correct classes for the images (highlighting vehicles detected with bounding boxes) in a large variety of different scenarios – multiple camera views, different types of roads, varying traffic and lighting conditions.
 <br>
