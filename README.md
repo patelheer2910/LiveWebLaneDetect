@@ -39,7 +39,7 @@ Start with cloning the repository, then follow the following steps:
   Our testing code is in the notebook traffic_density_test.ipynb. Go to the notebook and run all cells. The output video will be 'traffic_density_analysis.mp4' and stored in the folder sample_video 
 
 ## Visualizations
-Below is the final generated output of our model:
+Given link is the final generated output of our model:
 [Visualization](images/output_video.mp4)
 
 ## Data Collection
