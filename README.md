@@ -68,6 +68,7 @@ This project aims to estimate real-time traffic density using YOLOv8, an object 
 - **Hyperparameters**:<br>
   We used the following parameters to run the YOLOv8n head for 20 epochs:
   <img src="images/base_parameters.png" alt="Traffic Density" width="500"/>
+  
   Then we fine tuned the entire YOLOv8 model by updating the following parameters and running it for 130 more epochs:
   <img src="images/updated_parameters.png" alt="Traffic Density" width="500"/>
 
@@ -91,7 +92,7 @@ We identify vehicles within each frame using YOLO. We first isolate the region o
 After applying the detection model, bounding boxes are drawn around the vehicles, and their characteristics—such as size, position, and movement—are extracted. These boxes are then used to track vehicle movements, which helps estimate vehicle speeds and lane occupancy.
 <br>
 
-  <img src="images/LaneDetects.png" alt="Traffic Density" width="500"/>
+  <img src="images/Lanedetects.png" alt="Traffic Density" width="500"/>
   
 ## Traffic Density Estimation
 The system calculates the number of vehicles in each lane based on detected bounding boxes.
