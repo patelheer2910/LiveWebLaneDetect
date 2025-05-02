@@ -66,6 +66,7 @@ This project aims to estimate real-time traffic density using YOLOv8, an object 
   <img src="images/base_parameters.png" alt="Traffic Density" width="500"/>
   
   Then we fine tuned the entire YOLOv8 model by updating the following parameters and running it for 130 more epochs:
+  
   <img src="images/updated_parameters.png" alt="Traffic Density" width="500"/>
 
 - **Loss Functions**:
