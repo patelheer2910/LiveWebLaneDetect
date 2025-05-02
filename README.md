@@ -91,8 +91,6 @@ We identify vehicles within each frame using YOLO. We first isolate the region o
   <img src="images/detections.jpg" alt="Traffic Density" width="500"/>
 After applying the detection model, bounding boxes are drawn around the vehicles, and their characteristics—such as size, position, and movement—are extracted. These boxes are then used to track vehicle movements, which helps estimate vehicle speeds and lane occupancy.
 <br>
-
-  <img src="images/Lanedetects.png" alt="Traffic Density" width="500"/>
   
 ## Traffic Density Estimation
 The system calculates the number of vehicles in each lane based on detected bounding boxes.
