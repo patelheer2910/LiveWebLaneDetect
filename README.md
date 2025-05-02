@@ -20,7 +20,7 @@ Start with cloning the repository, then follow the following steps:
   We have uploaded the dataset and written down the corresponding locations in the final notebook.
 
 ### 3. Run the notebook
-  Our project code is in the notebook traffic_density.ipynb. Go to the notebook and run all cells. The output will be stored in the dir -> runs/detect/train.
+  Our project code is in the notebook code/traffic_density.ipynb. Go to the notebook and run all cells. The output will be stored in the dir -> runs/detect/train.
 
 ## Instructions to test our model
 Start with cloning the repository, then follow the following steps:
@@ -36,7 +36,7 @@ Start with cloning the repository, then follow the following steps:
   We have already set the paths, but you can change it if it is different for you.
 
 ### 3. Run the notebook
-  Our testing code is in the notebook traffic_density_test.ipynb. Go to the notebook and run all cells. The output video will be 'traffic_density_analysis.mp4' and stored in the folder sample_video 
+  Our testing code is in the notebook code/traffic_density_test.ipynb. Go to the notebook and run all cells. The output video will be 'traffic_density_analysis.mp4' and stored in the folder sample_video 
 
 ## Visualizations
 Given link is the final generated output of our model:
