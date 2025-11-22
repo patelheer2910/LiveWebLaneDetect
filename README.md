@@ -102,7 +102,7 @@ The system calculates the number of vehicles in each lane based on detected boun
 The system processes video frames dynamically, providing real-time updates on traffic density.
 
 - A dashboard or interface can display:
-  - Real-time bounding box visualization of detected vehicles.
+  - A Real-time bounding box visualization of detected vehicles.
   - Lane-wise vehicle counts for easy traffic assessment.
   - Current traffic intensity classification for each lane.
 - Data visualization tools such as Matplotlib and OpenCV assist in interpreting traffic patterns and trends over time.
